@@ -27,6 +27,7 @@ def signup():
 
 @bp.route('/login', methods=['POST'])
 def login():
+    from ..models import User
     data = request.get_json()
     username = data.get('username')
     password = data.get('password')

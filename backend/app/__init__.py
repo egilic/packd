@@ -24,9 +24,11 @@ def create_app():
     # Import after db is initialized
     from . import models 
 
-    from .routes import auth, groups, notes
+    from .routes import auth, groups, notes, home
     app.register_blueprint(auth.bp)
+    app.register_blueprint(home.bp)
     # app.register_blueprint(groups.bp) # No need to register now
     # app.register_blueprint(notes.bp)
 
     return app
+
